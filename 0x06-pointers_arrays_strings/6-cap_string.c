@@ -6,30 +6,31 @@
  * Return: A pointer to the changed string.
  */
 
-char *cap_string(char *)
+char *cap_string(char *str)
 {
 	int index = 0;
 
-	while (i[index])
+	while (str[index])
 	{
-		while (!(i[index] >= 'a' && i[index] <= 'z'))
+		while (!(str[index] >= 'a' && str[index] <= 'z'))
 			index++;
-		if (i[index - 1] == ' ' ||
-		i[index - 1] == '\t' ||
-		i[index - 1] == '\n' ||
-		i[index - 1] == ',' ||
-		i[index - 1] == ';' ||
-		i[index - 1] == '.' ||
-		i[index - 1] == '!' ||
-		i[index - 1] == '?' ||
-		i[index - 1] == '-' ||
-		i[index - 1] == '(' ||
-		i[index - 1] == ')' ||
-		i[index - 1] == '{' ||
-		i[index - 1] == '}' ||
+		if (str[index - 1] == ' ' ||
+		str[index - 1] == '\t' ||
+		str[index - 1] == '\n' ||
+		str[index - 1] == ',' ||
+		str[index - 1] == ';' ||
+		str[index - 1] == '.' ||
+		str[index - 1] == '!' ||
+		str[index - 1] == '?' ||
+		str[index - 1] == '-' ||
+		str[index - 1] == '(' ||
+		str[index - 1] == ')' ||
+		str[index - 1] == '{' ||
+		str[index - 1] == '}' ||
 		index == 0)
-			i[index] -= 32;
+		str[index] -= 32;
 		index++;
 	}
+	return (str);
 }
 
