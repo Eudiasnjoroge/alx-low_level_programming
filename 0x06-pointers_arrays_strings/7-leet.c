@@ -1,42 +1,46 @@
 #include "main.h"
 
 /**
- * leet - encodes a string into "1337".
- * @str: The string to be coded
+ * leet - Encodes a string into "1337".
+ * @str: The string to be encoded.
  *
- * Return: a pointer to the encoded string
+ * Return: A pointer to the encoded string.
  */
-
-char *leet(char *)
+char *leet(char *str)
 {
 	char *p = str;
 
 	while (*p)
 	{
-		char c = *p;
-		if ((c == 'a' || c == 'A') || (c == 'e' || c == 'E') || (c == 'o'))
+		if ((*p == 'a' || *p == 'A') ||
+		(*p == 'e' || *p == 'E') ||
+		(*p == 'o' || *p == 'O') ||
+		(*p == 't' || *p == 'T') ||
+		(*p == 'l' || *p == 'L'))
 
 		{
-			switch (c)
+			if (*p == 'a' || *p == 'A')
 			{
-				case 'a';
-				case 'A':
 				*p = '4';
-					break;
-				case 'e':
-				case 'E':
-					*p = '3';
-					break;
-				case 'o':
-				case 'O':
-					*p = '0';
-					break;
-				case 'l':
-				case 'L':
-					*p = '1';
-					break;
+			}
+			else if (*p == 'e' || *p == 'E')
+			{
+				*p = '3';
+			}
+			else if (*p == 'o' || *p == '0')
+			{
+				*p = '0';
+			}
+			else if (*p == 't' || *p == 'T')
+			{
+				*p = '7';
+			}
+			else if (*p == 'l' || *p == 'L')
+			{
+				*p = '1';
 			}
 		}
 		p++;
 	}
+	 return str;
 }
