@@ -13,38 +13,27 @@ int main(void)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
 		{
-			printf("%s", "Fizzbuzz");
-			if (i != 100)
-			{
-				printf(" ");
-			}
+			printf("Fizzbuzz");
 		}
 		else if (i % 3 == 0)
 		{
-			printf("%s", "Fizz");
-			if (i != 100)
-			{
-				printf(" ");
-			}
+			printf("Fizz");
 		}
 		else if (i % 5 == 0)
 		{
-			printf("%s", "Buzz");
-			if (i != 100)
-			{
-				printf(" ");
-			}
+			printf("Buzz");
 		}
 		else
 		{
 			printf("%d", i);
-			if (i !=100)
-			{
-				printf(" ");
-			}
 		}
-
+		
+		if (i != 100)
+		{
+			printf(" ");
+		}
 	}
 	printf("\n");
-		return (0);
+
+	return (0);
 }
