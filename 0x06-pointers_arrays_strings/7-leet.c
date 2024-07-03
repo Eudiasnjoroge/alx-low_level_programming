@@ -8,39 +8,19 @@
  */
 char *leet(char *str)
 {
-	char *p = str;
+	int i, j;
+	char leet_map[10] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	char leet_replace[10] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 
-	while (*p)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((*p == 'a' || *p == 'A') ||
-		(*p == 'e' || *p == 'E') ||
-		(*p == 'o' || *p == 'O') ||
-		(*p == 't' || *p == 'T') ||
-		(*p == 'l' || *p == 'L'))
-
+		for (j = 0; j < 10; j++)
 		{
-			if (*p == 'a' || *p == 'A')
+			if (str[i] == leet_map[j])
 			{
-				*p = '4';
-			}
-			else if (*p == 'e' || *p == 'E')
-			{
-				*p = '3';
-			}
-			else if (*p == 'o' || *p == '0')
-			{
-				*p = '0';
-			}
-			else if (*p == 't' || *p == 'T')
-			{
-				*p = '7';
-			}
-			else if (*p == 'l' || *p == 'L')
-			{
-				*p = '1';
+				str[i] = leet_replace[j];
 			}
 		}
-		p++;
 	}
-	 return str;
+	return (str);
 }
