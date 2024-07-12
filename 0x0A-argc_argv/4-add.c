@@ -34,24 +34,27 @@ int check_num(char *str)
  */
 int main(int argc, char *argv[])
 {
-	int count;
-	int str_to_int;
 	int sum = 0;
+	int i;
+	int j;
 
-	count = 1;
-	while (count < argc)
+	if (argc == 1)
 	{
-		if (check_num(argv[count]))
+		printf("0\n");
+		return (0);
+	}
+
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			str_to_int = atoi(argv[count]);
-			sum += str_to_int;
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
-		count++;
+		sum += atoi(argv[i]);
 	}
 
 	printf("%d\n", sum);
