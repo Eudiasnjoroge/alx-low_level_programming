@@ -88,7 +88,12 @@ int main(int argc, char *argv[])
 		print_error("Usage: cp file_from file_to\n", NULL, 97);
 
 	fd_from = open_file(argv[1], O_RDONLY, 0);
-	fd_to = open_file(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (fd_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
 
 	if (copy_file(fd_from, fd_to) == -1)
 	{
