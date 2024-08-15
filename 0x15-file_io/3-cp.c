@@ -98,9 +98,9 @@ int main(int argc, char *argv[])
 	}
 
 	if (close(fd_from) == -1)
-	print_error("Error: Can't close fd %d\n", argv[1], 100);
+		print_error("Error: Can't close fd %d\n", argv[1], 100);
 	if (close(fd_to) == -1)
-	print_error("Error: Can't close fd %d\n", argv[2], 100);
+		print_error("Error: Can't close fd %d\n", argv[2], 100);
 
 	return (0);
 }
